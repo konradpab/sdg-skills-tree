@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  pipeline:
+    build: .
+    container_name: sdg-skill-trees
+    volumes:
+      # Mount outputs so they persist after container stops
+      - ./data_raw:/thesis/data_raw
+      - ./data_processed:/thesis/data_processed
+      - ./models_saved:/thesis/models_saved
+      - ./outputs:/thesis/outputs
+      - ./reports:/thesis/reports
+      - ./registry:/thesis/registry
+      # Mount V-Dem manual download if present
+      - ./data_raw/vdem:/thesis/data_raw/vdem:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Override CMD for different modes:
+    #   docker compose run pipeline --synthetic
+    #   docker compose run pipeline --from-cache
+    #   docker compose run pipeline --real --countries POL DEU BRA
+
+  test:
+    build: .
+    container_name: sdg-skill-trees-test
+    entrypoint: ["python", "-m", "pytest"]
+    command: ["tests/", "-v", "--tb=short"]
+    profiles: ["test"]
+
+  preflight:
+    build: .
+    container_name: sdg-skill-trees-preflight
+    entrypoint: ["python", "preflight.py"]
+    command: []
+    profiles: ["preflight"]

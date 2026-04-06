@@ -1,0 +1,160 @@
+{
+  "registry_version": "1.0.0",
+  "created_utc": "2026-03-04T00:00:00Z",
+  "note": "Minimum Viable Stack (MVS) dataset registry. Real endpoints documented; synthetic data used for pipeline demonstration due to network constraints.",
+  "datasets": [
+    {
+      "id": "unsd_sdg",
+      "name": "UNSD SDG Global Database",
+      "domain": "outcomes",
+      "source_url": "https://unstats.un.org/sdgapi/swagger/",
+      "retrieval": "REST API (SDMX-JSON)",
+      "license": "Open / UN Terms of Use",
+      "version": "2025-Q4",
+      "fields_used": [
+        "7.1.1 (electricity access %)",
+        "7.2.1 (renewable share %)",
+        "7.3.1 (energy intensity MJ/USD)",
+        "9.2.1 (manufacturing value added % GDP)",
+        "9.5.1 (R&D expenditure % GDP)",
+        "13.2.2 (GHG emissions per capita)"
+      ],
+      "hash_sha256": "PENDING_REAL_DOWNLOAD",
+      "citation_key": "unsd_sdg_2025"
+    },
+    {
+      "id": "ember_electricity",
+      "name": "Ember Yearly Electricity Data",
+      "domain": "electricity",
+      "source_url": "https://ember-energy.org/data/yearly-electricity-data/",
+      "retrieval": "CSV download",
+      "license": "CC-BY-4.0",
+      "version": "2024",
+      "fields_used": [
+        "generation_twh (by source: coal, gas, solar, wind, hydro, nuclear, other)",
+        "demand_twh",
+        "emissions_mtco2",
+        "share_of_generation_pct"
+      ],
+      "hash_sha256": "PENDING_REAL_DOWNLOAD",
+      "citation_key": "ember_2024"
+    },
+    {
+      "id": "primap_hist",
+      "name": "PRIMAP-hist National Historical Emissions",
+      "domain": "emissions",
+      "source_url": "https://zenodo.org/records/10006301",
+      "retrieval": "Zenodo CSV download",
+      "license": "CC-BY-4.0",
+      "version": "v2.5.1",
+      "fields_used": [
+        "CO2 total (Mt CO2)",
+        "CH4 total (Mt CO2eq)",
+        "GHG total (Mt CO2eq)"
+      ],
+      "hash_sha256": "PENDING_REAL_DOWNLOAD",
+      "citation_key": "gutschow_2023_primap"
+    },
+    {
+      "id": "wgi",
+      "name": "Worldwide Governance Indicators",
+      "domain": "governance",
+      "source_url": "https://data360.worldbank.org/en/dataset/WB_WGI",
+      "retrieval": "Excel download",
+      "license": "CC-BY-4.0",
+      "version": "2023",
+      "fields_used": [
+        "Voice and Accountability",
+        "Political Stability",
+        "Government Effectiveness",
+        "Regulatory Quality",
+        "Rule of Law",
+        "Control of Corruption"
+      ],
+      "hash_sha256": "PENDING_REAL_DOWNLOAD",
+      "citation_key": "kaufmann_kraay_2023"
+    },
+    {
+      "id": "vdem",
+      "name": "V-Dem Dataset",
+      "domain": "governance",
+      "source_url": "https://v-dem.net/data/the-v-dem-dataset/",
+      "retrieval": "CSV download (registration required)",
+      "license": "V-Dem License (academic use)",
+      "version": "v14",
+      "fields_used": [
+        "v2x_polyarchy (electoral democracy index)",
+        "v2x_libdem (liberal democracy index)",
+        "v2x_partipdem (participatory democracy index)"
+      ],
+      "hash_sha256": "PENDING_REAL_DOWNLOAD",
+      "citation_key": "vdem_v14"
+    },
+    {
+      "id": "wdi",
+      "name": "World Development Indicators",
+      "domain": "macro",
+      "source_url": "https://wdi.worldbank.org/",
+      "retrieval": "World Bank API v2 (JSON)",
+      "license": "CC-BY-4.0",
+      "version": "2024-Q4",
+      "fields_used": [
+        "NY.GDP.PCAP.PP.KD (GDP per capita PPP)",
+        "NY.GDP.MKTP.KD.ZG (GDP growth)",
+        "NV.IND.TOTL.ZS (Industry % GDP)",
+        "EG.USE.PCAP.KG.OE (energy use per capita)",
+        "SE.XPD.TOTL.GD.ZS (education expenditure % GDP)",
+        "SP.POP.TOTL (total population)",
+        "SP.URB.TOTL.IN.ZS (urban population %)"
+      ],
+      "hash_sha256": "PENDING_REAL_DOWNLOAD",
+      "citation_key": "worldbank_wdi_2024"
+    },
+    {
+      "id": "swiid",
+      "name": "Standardized World Income Inequality Database",
+      "domain": "inequality",
+      "source_url": "https://fsolt.org/swiid/",
+      "retrieval": "CSV download",
+      "license": "CC-BY",
+      "version": "9.6",
+      "fields_used": [
+        "gini_disp (Gini index, disposable income)",
+        "gini_mkt (Gini index, market income)"
+      ],
+      "hash_sha256": "PENDING_REAL_DOWNLOAD",
+      "citation_key": "solt_2020_swiid"
+    },
+    {
+      "id": "carbon_pricing",
+      "name": "World Bank Carbon Pricing Dashboard",
+      "domain": "policy",
+      "source_url": "https://carbonpricingdashboard.worldbank.org/sites/default/files/data-latest.xlsx",
+      "retrieval": "Excel download",
+      "license": "CC-BY-4.0",
+      "version": "2024",
+      "fields_used": [
+        "carbon_price_usd_tco2",
+        "ets_coverage_pct",
+        "carbon_tax_coverage_pct"
+      ],
+      "hash_sha256": "PENDING_REAL_DOWNLOAD",
+      "citation_key": "wb_carbon_pricing_2024"
+    },
+    {
+      "id": "ucdp_ged",
+      "name": "UCDP Georeferenced Event Dataset",
+      "domain": "conflict",
+      "source_url": "https://ucdp.uu.se/downloads/",
+      "retrieval": "CSV download",
+      "license": "CC-BY-4.0",
+      "version": "24.1",
+      "fields_used": [
+        "conflict_events_count (aggregated to country-year)",
+        "battle_deaths (aggregated to country-year)"
+      ],
+      "hash_sha256": "PENDING_REAL_DOWNLOAD",
+      "citation_key": "sundberg_melander_2013"
+    }
+  ]
+}
