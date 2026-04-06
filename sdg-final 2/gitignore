@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+
+# Data — raw and processed (too large for git, reproduced by pipeline)
+data_raw/
+data_interim/
+data_processed/
+
+# Model artifacts (reproduced by pipeline)
+models/
+
+# Pipeline outputs
+outputs/
+runs/
+reports/
+
+# Registry exports (regenerated)
+registry/*.json
+registry/*.yaml
+registry/citations.bib
+
+# Logs
+*.log
+logs/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# Secrets and environment
+.env
+.env.*
+*.pem
+secrets/
+
+# Tar archives (don't re-commit the source bundle)
+*.tar.gz
+*.zip
