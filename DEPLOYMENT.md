@@ -106,8 +106,8 @@ sudo apt update && sudo apt install -y python3.12 python3.12-venv python3-pip gi
 # brew install python@3.12 git
 
 # 2. Clone the repo
-git clone https://github.com/konradpab/sdg-skill-trees.git
-cd sdg-skill-trees
+git clone https://github.com/konradpab/sdg-skills-tree.git
+cd sdg-skills-tree
 
 # 3. Create virtual environment
 python3.12 -m venv .venv
@@ -130,13 +130,13 @@ python preflight.py --env-only
 
 ```bash
 # Build the image
-docker build -t sdg-skill-trees .
+docker build -t sdg-skills-tree .
 
 # Run the full pipeline (outputs persist via volume mounts)
 docker run -v $(pwd)/reports:/thesis/reports \
            -v $(pwd)/outputs:/thesis/outputs \
            -v $(pwd)/data_processed:/thesis/data_processed \
-           sdg-skill-trees --real
+           sdg-skills-tree --real
 
 # Or use docker compose
 docker compose up pipeline
@@ -694,8 +694,8 @@ You would need to:
 
 ```bash
 # Zero to running (copy-paste block)
-git clone https://github.com/konradpab/sdg-skill-trees.git
-cd sdg-skill-trees
+git clone https://github.com/konradpab/sdg-skills-tree.git
+cd sdg-skills-tree
 python3.12 -m venv .venv && source .venv/bin/activate
 pip install -e .
 python preflight.py

@@ -11,7 +11,7 @@ Total time: about 20–30 minutes (most of it is waiting).
 ## Step 1: Open Your Repository on GitHub
 
 1. Open your browser (Chrome, Firefox, Safari — any is fine)
-2. Go to `https://github.com/<your-username>/sdg-skill-trees`
+2. Go to `https://github.com/<your-username>/sdg-skills-tree`
    (replace `<your-username>` with your actual GitHub username)
 3. You should see a page listing your project files:
    `config.yaml`, `run_pipeline.py`, `src/`, `README.md`, etc.
@@ -278,7 +278,7 @@ The report is an HTML file. Here's how to see it:
 4. Type **"Simple Browser"** and select **"Simple Browser: Show"**
 5. In the URL bar that appears, type:
    ```
-   /workspaces/sdg-skill-trees/reports/final_report.html
+   /workspaces/sdg-skills-tree/reports/final_report.html
    ```
    (This might not work in all Codespace configurations — Method A is
    more reliable.)

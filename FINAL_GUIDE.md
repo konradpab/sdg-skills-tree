@@ -27,14 +27,14 @@ Everything you need to go from zero to a complete pipeline run.
 
 ## Step 1: Delete Old Repo, Create Fresh One
 
-1. Go to `https://github.com/YOUR_USERNAME/sdg-skill-trees`
+1. Go to `https://github.com/YOUR_USERNAME/sdg-skills-tree`
 2. **Settings** → scroll to bottom → **Delete this repository** → confirm
 3. Go to https://github.com/new
-4. Name: `sdg-skill-trees`, Private ✓, do NOT check any boxes → **Create repository**
+4. Name: `sdg-skills-tree`, Private ✓, do NOT check any boxes → **Create repository**
 
 ## Step 2: Upload Files
 
-1. Download `sdg-skill-trees-final.tar.gz` from this conversation
+1. Download `sdg-skills-tree-final.tar.gz` from this conversation
 2. Unzip it on your computer
 3. Inside you'll find a folder called `sdg-final` — open it
 4. On the empty GitHub repo page, click **"uploading an existing file"**

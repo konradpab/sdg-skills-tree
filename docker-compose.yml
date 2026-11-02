@@ -3,7 +3,7 @@ version: "3.8"
 services:
   pipeline:
     build: .
-    container_name: sdg-skill-trees
+    container_name: sdg-skills-tree
     volumes:
       # Mount outputs so they persist after container stops
       - ./data_raw:/thesis/data_raw
@@ -23,14 +23,14 @@ services:
 
   test:
     build: .
-    container_name: sdg-skill-trees-test
+    container_name: sdg-skills-tree-test
     entrypoint: ["python", "-m", "pytest"]
     command: ["tests/", "-v", "--tb=short"]
     profiles: ["test"]
 
   preflight:
     build: .
-    container_name: sdg-skill-trees-preflight
+    container_name: sdg-skills-tree-preflight
     entrypoint: ["python", "preflight.py"]
     command: []
     profiles: ["preflight"]

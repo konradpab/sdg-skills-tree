@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software or its findings, please cite the thesis below."
+title: "SDG Skill-Trees: ML pipeline for country-specific policy–tech pathways"
+authors:
+  - family-names: Pabianczyk
+    given-names: Konrad
+    affiliation: "OPIT – Open Institute of Technology"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # add if you have one
+license: MIT
+repository-code: "https://github.com/konradpab/sdg-skills-tree"
+version: "preprint-v1"
+date-released: "2026-10-31"
+doi: "10.5281/zenodo.23649099"   # DOI of the thesis this code accompanies
+preferred-citation:
+  type: thesis
+  title: "From Indicators to Interventions: Learning Personalized Policy–Tech Pathways Toward SDG Progress"
+  authors:
+    - family-names: Pabianczyk
+      given-names: Konrad
+  institution:
+    name: "OPIT – Open Institute of Technology"
+  thesis-type: "MSc thesis"
+  year: 2026
+  doi: "10.5281/zenodo.23649099"

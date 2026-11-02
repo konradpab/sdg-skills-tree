@@ -1,0 +1,40 @@
+# Data (raw downloads can be large; re-download via `make run`)
+data_raw/
+data_interim/
+data_processed/
+!data_raw/.gitkeep
+!data_interim/.gitkeep
+!data_processed/.gitkeep
+
+# Models (binary, regenerate via pipeline)
+models_saved/
+!models_saved/.gitkeep
+
+# Outputs
+outputs/recommendations/*.csv
+outputs/recommendations/*.json
+reports/figures/
+reports/final_report.html
+!reports/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Env
+.env
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp

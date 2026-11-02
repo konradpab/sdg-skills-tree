@@ -222,6 +222,36 @@ appears, add it to `src/ingest/country_codes.py`.
 
 ---
 
+## 10. Hofstede 6-D Cultural Dimensions (user-provided)
+
+**What it provides:** Country scores for Hofstede's six dimensions (PDI, IDV, MAS,
+UAI, LTO, IVR) plus two Minkov & Kaasa (2022) meta-dimensions, used as optional
+context features in the culture ablation.
+
+**Licence:** Hofstede dimension data is published for research use; it is **not
+redistributed** with this repository.
+
+**How to provide it:**
+1. Download the 6-D country scores from
+   https://geerthofstede.com/research-and-vsm/dimension-data-matrix/
+2. Add the Minkov & Kaasa (2022) Individualism-Collectivism and
+   Flexibility-Monumentalism scores (Journal of International Management 28(4)).
+3. Save as `data_raw/culture/hofstede_scores.csv` with the columns
+   `country_iso3, hofstede_pdi, hofstede_idv, hofstede_mas, hofstede_uai,
+   hofstede_lto, hofstede_ivr, minkov_idv_coll, minkov_flx_mon`.
+
+Without the file the pipeline still runs: cultural features are NaN and the
+culture ablation is effectively skipped.
+
+**Note (thesis v1.2 erratum):** in the thesis runs, the two Minkov-Kaasa columns
+were approximated from Hofstede IDV and LTO, not the published scores.
+
+| Dataset | Access | Notes |
+|---------|--------|-------|
+| Hofstede 6-D dimension data | research use, not redistributed | user-provided CSV |
+
+---
+
 ## Extension Datasets (not in MVS)
 
 These are configured in `config.yaml` but disabled by default. To enable:

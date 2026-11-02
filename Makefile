@@ -98,7 +98,7 @@ verify-strict:  ## Verify outputs (strict — fail on warnings)
 # ── Docker ────────────────────────────────────────────────────────────
 
 docker-build:  ## Build Docker image
-	docker build -t sdg-skill-trees .
+	docker build -t sdg-skills-tree .
 
 docker-run:  ## Run pipeline in Docker (real data)
 	docker compose up pipeline

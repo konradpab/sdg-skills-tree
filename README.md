@@ -1,5 +1,11 @@
 # SDG Skill-Trees: ML Pipeline for Country-Specific Decarbonization Roadmaps
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23649099.svg)](https://doi.org/10.5281/zenodo.23649099)
+
+Code for the MSc thesis **"From Indicators to Interventions: Learning Personalized
+Policy–Tech Pathways Toward SDG Progress"** (Konrad Pabianczyk, OPIT – Open Institute
+of Technology, 2026). The thesis is open access: https://doi.org/10.5281/zenodo.23649099
+
 A reproducible ML system that learns region-specific technology/policy adoption
 pathways ("skill-trees") to maximize SDG progress and decarbonization while
 respecting feasibility constraints, and produces actionable ranked roadmaps
@@ -11,13 +17,14 @@ with uncertainty quantification.
 
 ```bash
 # 1. Clone and enter the project
-git clone <your-repo-url> && cd thesis
+git clone https://github.com/konradpab/sdg-skills-tree && cd sdg-skills-tree
 
 # 2. Create virtual environment + install
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e .
 
 # 3. (Optional) Place V-Dem CSV manually — see "Manual Downloads" below
+#    (Optional) Place the Hofstede CSV for the culture features — see DATA_SOURCES.md §10
 
 # 4. Run the full pipeline on real data
 python run_pipeline.py --real
@@ -94,7 +101,7 @@ quarto check
 ## Project Structure
 
 ```
-thesis/
+sdg-skills-tree/
 ├── config.yaml                  # All tuneable parameters (single source of truth)
 ├── run_pipeline.py              # Main entry point
 ├── pyproject.toml               # Dependencies
@@ -366,11 +373,11 @@ A small cloud VM guarantees a clean environment and reliable network.
 ```bash
 # On a fresh Ubuntu 22.04 VM:
 sudo apt update && sudo apt install -y python3.12 python3.12-venv python3-pip git
-git clone <your-repo> && cd thesis
+git clone https://github.com/konradpab/sdg-skills-tree && cd sdg-skills-tree
 python3.12 -m venv .venv && source .venv/bin/activate
 pip install -e .
 python run_pipeline.py --real
-# Download report: scp user@vm:thesis/reports/final_report.html .
+# Download report: scp user@vm:sdg-skills-tree/reports/final_report.html .
 ```
 
 ### Option C: GitHub Codespaces (zero setup)
@@ -391,8 +398,8 @@ CMD ["python", "run_pipeline.py", "--real"]
 ```
 
 ```bash
-docker build -t sdg-skill-trees .
-docker run -v $(pwd)/outputs:/thesis/outputs sdg-skill-trees
+docker build -t sdg-skills-tree .
+docker run -v $(pwd)/outputs:/thesis/outputs sdg-skills-tree
 ```
 
 ---
@@ -474,13 +481,35 @@ After a successful run:
 
 ## Citation
 
-If you use this pipeline in academic work:
+If you use this pipeline or its findings, please cite the thesis
+(GitHub's "Cite this repository" button reads `CITATION.cff`):
 
 ```bibtex
-@software{sdg_skill_trees_2026,
-  author = {Konrad},
+@mastersthesis{pabianczyk_2026_indicators,
+  author = {Pabianczyk, Konrad},
+  title  = {From Indicators to Interventions: Learning Personalized Policy--Tech Pathways Toward SDG Progress},
+  school = {OPIT -- Open Institute of Technology},
+  year   = {2026},
+  doi    = {10.5281/zenodo.23649099},
+  url    = {https://doi.org/10.5281/zenodo.23649099}
+}
+
+@software{pabianczyk_2026_sdg_skill_trees,
+  author = {Pabianczyk, Konrad},
   title  = {SDG Skill-Trees: ML Pipeline for Country-Specific Decarbonization Roadmaps},
   year   = {2026},
-  url    = {https://github.com/konradpab/sdg-skill-trees}
+  url    = {https://github.com/konradpab/sdg-skills-tree}
 }
 ```
+
+---
+
+## Acknowledgements
+
+Developed as the MSc thesis in Applied AI and Data Science at OPIT – Open Institute
+of Technology (2026).
+
+## License
+
+Code: MIT (see `LICENSE`). Data sources keep their own licences; see
+`DATA_SOURCES.md`. Hofstede dimension scores are not redistributed here.

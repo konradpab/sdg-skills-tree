@@ -1,0 +1,14 @@
+{
+  "name": "SDG Skill-Trees Pipeline",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "postCreateCommand": "bash setup.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": ["ms-python.python"]
+    }
+  }
+}

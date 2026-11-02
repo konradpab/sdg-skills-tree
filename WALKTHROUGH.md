@@ -41,7 +41,7 @@ or on a cheap cloud VM. GitHub Actions tests every push automatically.
 
 Go to https://github.com/new and create a new repository:
 
-- **Name:** `sdg-skill-trees`
+- **Name:** `sdg-skills-tree`
 - **Visibility:** Private (you can make it public later for thesis submission)
 - **Do NOT** initialize with a README — we already have one
 
@@ -55,7 +55,7 @@ git init
 git add -A
 git commit -m "Initial commit: full SDG skill-tree pipeline"
 git branch -M main
-git remote add origin git@github.com:<YOUR-USERNAME>/sdg-skill-trees.git
+git remote add origin git@github.com:<YOUR-USERNAME>/sdg-skills-tree.git
 git push -u origin main
 ```
 
@@ -74,17 +74,17 @@ Then retry `git push`.
 
 **Alternatively, use HTTPS:**
 ```bash
-git remote set-url origin https://github.com/<YOUR-USERNAME>/sdg-skill-trees.git
+git remote set-url origin https://github.com/<YOUR-USERNAME>/sdg-skills-tree.git
 git push -u origin main
 # Enter your GitHub username and a Personal Access Token (not your password)
 ```
 
 ### 1c. Verify on GitHub
 
-Go to `https://github.com/<YOUR-USERNAME>/sdg-skill-trees`. You should see:
+Go to `https://github.com/<YOUR-USERNAME>/sdg-skills-tree`. You should see:
 
 ```
-sdg-skill-trees/
+sdg-skills-tree/
 ├── .github/workflows/ci.yml
 ├── src/
 ├── registry/
@@ -141,8 +141,8 @@ brew install python@3.12 git
 
 Clone your repo:
 ```bash
-git clone git@github.com:<YOUR-USERNAME>/sdg-skill-trees.git
-cd sdg-skill-trees
+git clone git@github.com:<YOUR-USERNAME>/sdg-skills-tree.git
+cd sdg-skills-tree
 ```
 
 ### Option C: Cloud VM (Best for Final Reproducible Runs)
@@ -159,8 +159,8 @@ Create an Ubuntu 24.04 server, SSH in, then:
 
 ```bash
 sudo apt update && sudo apt install -y python3.12 python3.12-venv python3-pip git
-git clone git@github.com:<YOUR-USERNAME>/sdg-skill-trees.git
-cd sdg-skill-trees
+git clone git@github.com:<YOUR-USERNAME>/sdg-skills-tree.git
+cd sdg-skills-tree
 ```
 
 ---
@@ -401,7 +401,7 @@ open reports/final_report.html          # macOS
 xdg-open reports/final_report.html      # Linux
 
 # On a cloud VM — download to your laptop:
-scp root@<server-ip>:~/sdg-skill-trees/reports/final_report.html .
+scp root@<server-ip>:~/sdg-skills-tree/reports/final_report.html .
 open final_report.html
 ```
 
@@ -613,17 +613,17 @@ For your thesis appendix: "Anyone can reproduce these results with two commands.
 ### Build and Run Locally
 
 ```bash
-docker build -t sdg-skill-trees .
+docker build -t sdg-skills-tree .
 
 # Synthetic test:
-docker run sdg-skill-trees --synthetic
+docker run sdg-skills-tree --synthetic
 
 # Real data with output persistence:
 docker run \
   -v $(pwd)/reports:/thesis/reports \
   -v $(pwd)/outputs:/thesis/outputs \
   -v $(pwd)/data_processed:/thesis/data_processed \
-  sdg-skill-trees --real
+  sdg-skills-tree --real
 ```
 
 ### Or Use Docker Compose
@@ -643,13 +643,13 @@ So anyone can pull your image without building:
 echo $GITHUB_TOKEN | docker login ghcr.io -u <YOUR-USERNAME> --password-stdin
 
 # Tag and push
-docker tag sdg-skill-trees ghcr.io/<YOUR-USERNAME>/sdg-skill-trees:v1.0
-docker push ghcr.io/<YOUR-USERNAME>/sdg-skill-trees:v1.0
+docker tag sdg-skills-tree ghcr.io/<YOUR-USERNAME>/sdg-skills-tree:v1.0
+docker push ghcr.io/<YOUR-USERNAME>/sdg-skills-tree:v1.0
 ```
 
 Then anyone can run:
 ```bash
-docker run ghcr.io/<YOUR-USERNAME>/sdg-skill-trees:v1.0 --real
+docker run ghcr.io/<YOUR-USERNAME>/sdg-skills-tree:v1.0 --real
 ```
 
 ---
@@ -731,7 +731,7 @@ python -c "import pandas as pd; print(sorted(pd.read_csv('data_processed/master_
 
 ```bash
 # ── Setup ──────────────────────────────────────────────
-git clone git@github.com:<YOUR-USERNAME>/sdg-skill-trees.git && cd sdg-skill-trees
+git clone git@github.com:<YOUR-USERNAME>/sdg-skills-tree.git && cd sdg-skills-tree
 python3.12 -m venv .venv && source .venv/bin/activate
 pip install -e .
 python preflight.py

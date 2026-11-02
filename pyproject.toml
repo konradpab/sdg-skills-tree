@@ -1,5 +1,5 @@
 [project]
-name = "sdg-skill-trees"
+name = "sdg-skills-tree"
 version = "1.0.0"
 description = "ML pipeline for country-specific SDG intervention roadmaps"
 readme = "README.md"
